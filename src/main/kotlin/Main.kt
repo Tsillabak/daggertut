@@ -1,11 +1,10 @@
 object Main {
+    lateinit var car: Car
 
     @JvmStatic
     fun main(args: Array<String>){
-        val engine = Engine()
-        val wheels = Wheels()
-
-        val car = Car(engine, wheels)
+        val component = DaggerCarComponent.create()
+        car = component.car
         car.drive()
     }
 

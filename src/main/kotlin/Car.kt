@@ -1,8 +1,8 @@
-class Car(var engine: Engine, var wheels: Wheels) {
+import javax.inject.Inject
+
+class  Car @Inject constructor(var engine: Engine, var wheels: Wheels) {
 
     fun drive(){
-        /*
-            VROOOM
-         */
+   println("Driving")
     }
 }
