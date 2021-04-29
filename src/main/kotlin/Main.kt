@@ -1,11 +1,21 @@
-object Main {
-    lateinit var car: Car
+import javax.inject.Inject
 
-    @JvmStatic
-    fun main(args: Array<String>){
-        val component = DaggerCarComponent.create()
-        car = component.car
-        car.drive()
-    }
+class Main {
+    @Inject
+     lateinit var car: Car
+     fun run(){
+         car.drive()
+     }
+     companion object{
+         val main = Main()
+         @JvmStatic
+         fun main(args: Array<String>){
+             val component = DaggerCarComponent.create()
+             component.inject(main)
+             main.run()
+         }
+     }
+
+
 
 }
