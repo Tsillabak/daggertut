@@ -5,6 +5,10 @@ plugins {
     kotlin("jvm") version "1.5.0"
     kotlin("kapt") version "1.5.0"
 }
+tasks.withType<Wrapper> {
+    gradleVersion = "7.0"
+
+}
 
 group = "org.example"
 version = "1.0-SNAPSHOT"

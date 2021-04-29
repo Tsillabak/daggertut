@@ -1,4 +1,5 @@
-import javax.inject.Inject
 
-class Wheels @Inject constructor() {
+
+class Wheels( val rims: Rims, val tires: Tires) {
+
 }
